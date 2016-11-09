@@ -24,7 +24,24 @@ public class Principal {
 		
 		String line=""; 
 		
+		//Read and save lines
+		while(line!=null){
+			switch(ln.getLineNumber()){
+			case 0: 
+					line=ln.readLine(); 
+					NoTerminal=line.split(",");
+					
+					break; 
+			default: 
+					break; 
+			};
+		};
 		
+		//Check of saved values 
+		for(int i=0; i<NoTerminal.length; i++){
+			System.out.println(NoTerminal[i].toString());
+		}
+		ln.close();
 	}
 
 }
