@@ -36,3 +36,37 @@ El archivo de texto deberá tener el siguiente formato:
                A->a
                B->b
                B->lmd
+
+El archivo resultante deberá tener el formato siguiente: 
+
+1. El primer renglón indica el conjunto de estados, separados or comas. 
+2. El segundo renglón indica los símbolos dle afabeto de entrada, separados por comas. 
+3. El tercer renglón indica los símbolos del alfabeto de la pila, separados por comas. 
+4. El cuatro renglón indica el conjunto de estados finales, separados por comas. 
+5. A partir del quinto renglón deberá especificar la función de transición del autómata de pila, en el formato: 
+      
+      estado, símbolo_alfabeto, símbolo_pila->(estado, símbolo_pila) 
+      
+Por ejemplo, el autómata de pila equivalente de la gramática anterior será: 
+
+      q0, q1
+      a, b
+      A, B
+      q1
+      q0,a,lmd->(q0,lmd)
+      q0,a,lmd->(q1,A)
+      q1,a,A->(q1, AB)
+      q1,a,A->(q1,lmd)
+      q1,b,B->(q1,lmd)
+      q1,lmd,B->(q1,lmd)
+      
+Se deberá probar que la cadena w (dada por el usuario) forma parte del lenguaje o no. 
+
+Ejemplo: 
+
+Cadena: aaab 
+Se acepta porque:
+  
+    (q0, aaab, lmd)⊢(q1,ab,AB)⊢(q1,b,B)⊢(q1,b,lmd)
+
+      
