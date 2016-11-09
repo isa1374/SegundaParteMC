@@ -43,6 +43,12 @@ public class Principal {
 			};
 			ln.close();
 			
+			//Check values in ArrayList 
+			for(int i=0; i<Prod.size(); i++){
+				if(Prod.get(i)!=null){
+					System.out.println(Prod.get(i).toString());
+				}
+			}
 			
 		}catch( IOException e){
 			System.out.println("Error");
