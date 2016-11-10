@@ -44,13 +44,15 @@ public class Principal {
 			ln.close();
 			
 			//Check values in ArrayList 
+			/*
 			for(int i=0; i<Prod.size(); i++){
 				if(Prod.get(i)!=null){
 					System.out.println(Prod.get(i).toString());
 				}
 			}
+			*/
 			
-			//arbol 
+			//Lógica arbol 
 			class Arbol{
 				private AuTree root; 
 				public Arbol(){
@@ -85,7 +87,7 @@ public class Principal {
 				
 			}
 			
-			//test
+			//test tree
 			Arbol tree= new Arbol();
 			String data;
 			
@@ -97,10 +99,12 @@ public class Principal {
 			tree.inDer(data2);
 			tree.inIz(data3);
 			
+			//Check values inside tree
+			/*
 			System.out.println("Nodo raiz " + tree.getNodo()); 
 			System.out.println("Nodo derecho " + tree.getNodoDer());
 			System.out.println("Nodo izquierdo " + tree.getNodoIz());
-			
+			*/
 			
 		}catch( IOException e){
 			System.out.println("Error");
