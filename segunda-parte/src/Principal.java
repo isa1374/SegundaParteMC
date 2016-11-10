@@ -50,6 +50,58 @@ public class Principal {
 				}
 			}
 			
+			//arbol 
+			class Arbol{
+				private AuTree root; 
+				public Arbol(){
+						root=null;
+					}
+				public synchronized void insertNodo(String data){
+						if(root==null){
+							root = new AuTree(data);
+						}else{
+							root.insertar(data);
+						}
+					}
+				public synchronized void inDer(String data){
+						if(root.nododerecho==null){
+							root.insertarDerecha(data);
+						}
+					}
+				public synchronized void inIz(String data ){
+					if(root.nodoizquierdo==null){
+						root.insertarIzquierda(data);
+					}
+				}
+				public String getNodo(){
+					return root.data.toString();
+				}
+				public String getNodoDer(){
+					return root.nododerecho.data.toString();
+				}
+				public String getNodoIz(){
+					return root.nodoizquierdo.data.toString();
+				}
+				
+			}
+			
+			//test
+			Arbol tree= new Arbol();
+			String data;
+			
+			data="A";
+			String data2="a"; 
+			String data3="b";
+			
+			tree.insertNodo(data);
+			tree.inDer(data2);
+			tree.inIz(data3);
+			
+			System.out.println("Nodo raiz " + tree.getNodo()); 
+			System.out.println("Nodo derecho " + tree.getNodoDer());
+			System.out.println("Nodo izquierdo " + tree.getNodoIz());
+			
+			
 		}catch( IOException e){
 			System.out.println("Error");
 		}
