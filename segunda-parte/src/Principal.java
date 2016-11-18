@@ -113,7 +113,7 @@ public class Principal {
 			System.out.println("Nodo izquierdo " + tree.getNodoIz());
 			*/
 			
-			//Multimap tested 
+			//Multimap insert values
 			String []aux;
 			for(int i=0; i<Prod.size(); i++){
 				if(Prod.get(i)!=null){
@@ -133,6 +133,7 @@ public class Principal {
 			Multimap<String,String> invertedMultimap= Multimaps.invertFrom(gramatica, ArrayListMultimap.<String,String>create());
 			//System.out.println(invertedMultimap.values().toString());
 			int ciclo = pb.length();
+			
 			for(int n=0; n<ciclo; n++){
 				pb.deleteCharAt(0);
 				pre= pre+word[n];
@@ -144,9 +145,7 @@ public class Principal {
 				}
 			}
 			
-			for(int l=0; l<posibles.size();l++){
-				System.out.println(posibles.get(l).toString());
-			}
+			
 				
 		}catch( IOException e){
 			System.out.println("Error");
