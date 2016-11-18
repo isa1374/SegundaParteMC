@@ -43,7 +43,6 @@ public class Principal {
 						break;
 				default: 
 						line = ln.readLine();
-						System.out.println(line);
 						Prod.add(line);
 						break; 
 				}
@@ -95,6 +94,7 @@ public class Principal {
 			}
 			
 			//test tree
+			/*
 			Arbol tree= new Arbol();
 			String data;
 			
@@ -107,7 +107,7 @@ public class Principal {
 			tree.inIz(data3);
 			
 			//Check values inside tree
-			/*
+			
 			System.out.println("Nodo raiz " + tree.getNodo()); 
 			System.out.println("Nodo derecho " + tree.getNodoDer());
 			System.out.println("Nodo izquierdo " + tree.getNodoIz());
@@ -123,10 +123,34 @@ public class Principal {
 				}
 			}
 			
+			//Checar 
+			String palabra = "aaabb";
+			System.out.println(palabra);
+			StringBuilder pb = new StringBuilder(palabra);
+			char [] word = palabra.toCharArray();
+			String ay1="";
+			pb.deleteCharAt(0);
+			
+			ArrayList <String> posibles= new ArrayList <String>();
+			Multimap<String,String> invertedMultimap= Multimaps.invertFrom(gramatica, ArrayListMultimap.<String,String>create());
+			System.out.println(invertedMultimap.values().toString());
+			System.out.println(invertedMultimap.get("a").toString());
+			
+			ay1= invertedMultimap.get("a").toString()+pb;
+			System.out.println(ay1);
+			palabra=ay1;
+			System.out.println(palabra);
+			
+			
+			
+			
+			
 		}catch( IOException e){
 			System.out.println("Error");
 		}
 			
 	}
+
+
 
 }
