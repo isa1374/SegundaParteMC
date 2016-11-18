@@ -130,7 +130,6 @@ public class Principal {
 			char [] word = palabra.toCharArray();
 			String ay1="";
 			pb.deleteCharAt(0);
-			
 			ArrayList <String> posibles= new ArrayList <String>();
 			Multimap<String,String> invertedMultimap= Multimaps.invertFrom(gramatica, ArrayListMultimap.<String,String>create());
 			System.out.println(invertedMultimap.values().toString());
@@ -138,8 +137,8 @@ public class Principal {
 			
 			ay1= invertedMultimap.get("a").toString()+pb;
 			System.out.println(ay1);
-			palabra=ay1;
-			System.out.println(palabra);
+			posibles.add(ay1);
+			System.out.println(posibles.get(0).toString());
 			
 			
 			
