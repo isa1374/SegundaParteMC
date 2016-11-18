@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
 
+import com.google.common.collect.*;
+
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -12,6 +15,9 @@ public class Principal {
 		String [] Terminal = null; 
 		String inicial = ""; 
 		ArrayList<String> Prod = new ArrayList<String>(); 
+		ListMultimap<String,String> gramatica = ArrayListMultimap.create(); 
+		
+		
 		
 		try{
 			File file = new File ("C:/Users/isha1_000/Documents/GitHub/SegundaParteMC/segunda-parte/src/Gram.txt");
@@ -36,7 +42,8 @@ public class Principal {
 						inicial = line; 
 						break;
 				default: 
-						line = ln.readLine(); 
+						line = ln.readLine();
+						System.out.println(line);
 						Prod.add(line);
 						break; 
 				}
@@ -105,6 +112,16 @@ public class Principal {
 			System.out.println("Nodo derecho " + tree.getNodoDer());
 			System.out.println("Nodo izquierdo " + tree.getNodoIz());
 			*/
+			
+			//Multimap tested 
+			String []aux;
+			for(int i=0; i<Prod.size(); i++){
+				if(Prod.get(i)!=null){
+					aux=Prod.get(i).split("->");
+					gramatica.put(aux[0].toString(), aux[1].toString());
+					aux=null;
+				}
+			}
 			
 		}catch( IOException e){
 			System.out.println("Error");
