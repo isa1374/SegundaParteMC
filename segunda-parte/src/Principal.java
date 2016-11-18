@@ -125,25 +125,29 @@ public class Principal {
 			
 			//Checar 
 			String palabra = "aaabb";
-			System.out.println(palabra);
 			StringBuilder pb = new StringBuilder(palabra);
 			char [] word = palabra.toCharArray();
+			String pre="";
 			String ay1="";
-			pb.deleteCharAt(0);
 			ArrayList <String> posibles= new ArrayList <String>();
 			Multimap<String,String> invertedMultimap= Multimaps.invertFrom(gramatica, ArrayListMultimap.<String,String>create());
-			System.out.println(invertedMultimap.values().toString());
-			System.out.println(invertedMultimap.get("a").toString());
+			//System.out.println(invertedMultimap.values().toString());
+			int ciclo = pb.length();
+			for(int n=0; n<ciclo; n++){
+				pb.deleteCharAt(0);
+				pre= pre+word[n];
+				if(invertedMultimap.containsKey(pre)==true){
+					ay1= invertedMultimap.get(pre).toString()+pb;
+					//System.out.println(ay1);
+					posibles.add(ay1);
+					ay1="";
+				}
+			}
 			
-			ay1= invertedMultimap.get("a").toString()+pb;
-			System.out.println(ay1);
-			posibles.add(ay1);
-			System.out.println(posibles.get(0).toString());
-			
-			
-			
-			
-			
+			for(int l=0; l<posibles.size();l++){
+				System.out.println(posibles.get(l).toString());
+			}
+				
 		}catch( IOException e){
 			System.out.println("Error");
 		}
