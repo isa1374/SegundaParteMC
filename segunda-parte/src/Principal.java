@@ -134,15 +134,22 @@ public class Principal {
 			//System.out.println(invertedMultimap.values().toString());
 			int ciclo = pb.length();
 			
-			for(int n=0; n<ciclo; n++){
+			if(palabra.charAt(0)=='a'){
 				pb.deleteCharAt(0);
-				pre= pre+word[n];
-				if(invertedMultimap.containsKey(pre)==true){
-					ay1= invertedMultimap.get(pre).toString()+pb;
-					//System.out.println(ay1);
-					posibles.add(ay1);
-					ay1="";
+				for(int n=1; n<ciclo; n++){
+					pb.deleteCharAt(0);
+					pre= pre+word[n];
+					
+						if(invertedMultimap.containsKey(pre)==true){
+							ay1="a" + invertedMultimap.get(pre).toString()+pb;
+							System.out.println(ay1);
+							posibles.add(ay1);
+							ay1="";
+						}
+					
 				}
+			}else{
+				System.out.println("No comienza con a");
 			}
 			
 			
