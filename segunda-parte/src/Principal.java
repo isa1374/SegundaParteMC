@@ -133,8 +133,17 @@ public class Principal {
 			Multimap<String,String> invertedMultimap= Multimaps.invertFrom(gramatica, ArrayListMultimap.<String,String>create());
 			//System.out.println(invertedMultimap.values().toString());
 			int ciclo = pb.length();
+			boolean ver=true; 
 			
-			if(palabra.charAt(0)=='a'){
+			//verificación de estructura 
+			for(int i=0;i<word.length;i++)
+				if(word[0]=='a'&& word[ciclo-1]=='b' || word[0]== 'a' && word[i]!= 'b'){
+					ver=true; 
+				}else{
+					ver=false; 
+				}
+			
+			if(ver==true){
 				pb.deleteCharAt(0);
 				for(int n=1; n<ciclo; n++){
 					pb.deleteCharAt(0);
@@ -149,7 +158,7 @@ public class Principal {
 					
 				}
 			}else{
-				System.out.println("No comienza con a");
+				System.out.println("No");
 			}
 			
 			
