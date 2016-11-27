@@ -107,6 +107,7 @@ public class Principal{
 								seguir=false;
 								break;
 							}
+							
 							int len=ops.length();
 							for(int i=0; i<len; i++){
 								String bef="";
