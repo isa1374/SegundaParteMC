@@ -118,7 +118,7 @@ public class Principal{
 										bef=ops.substring(0,i);
 										aft=ops.substring(i+1,len);
 									}
-									Regla ayu=null;
+									Regla ayu= new Regla("");
 									for(int x= 0; x<reglas.size(); x++){
 										if(reglas.get(x).getSimbolo().equals(sim)){
 											ayu=reglas.get(x);
