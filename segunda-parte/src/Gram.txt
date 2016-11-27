@@ -1,4 +1,4 @@
-A,B
+S,A,B
 a,b
 S
 S->aS
